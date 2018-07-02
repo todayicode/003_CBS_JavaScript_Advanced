@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Дополнительное задание</title>
+</head>
+<style>
+    a {
+       
+        text-decoration: none;
+    }
+    p, a, div {
+        width: 100px;
+        height: 100px;
+        background-color: white;
+        border-radius: 5px 5px;
+        border: 3px solid grey;
+        margin: 20px;
+        padding: 20px 15px ;
+        font-size: 30pt;
+        box-sizing: border-box;
+        color: black;
+        display: inline-block;
+    }
+
+    div {
+        padding: 20px 0 ;
+    }
+</style>
+<body>
+    <p>&lt;p&gt;</p>
+    <a href="#">&lt;a&gt;</a>
+    <p>&lt;p&gt;</p>
+    <div id="test_div">&lt;div&gt;</div>
+    <p>&lt;p&gt;</p>
+    <a href="#">&lt;a&gt;</a>
+    <a href="#">&lt;a&gt;</a>
+    <p>&lt;p&gt;</p>
+    <a href="#">&lt;a&gt;</a>
+    <a href="#">&lt;a&gt;</a>
+    <p>&lt;p&gt;</p>
+    <button id = "p">выбрать все параграфы</button>
+    <button id = "a">выбрать все ссылки</button>
+    <button id = "div">выбрать DIV</button>
+<script>
+    //Разобраться : кнопки + включение с первого раза
+    //элементы
+    var paragraphs = document.getElementsByTagName('p');
+    var anchors = document.getElementsByTagName('a');
+    var div = document.getElementById('test_div');
+    //кнопки
+    var pButton = document.getElementById('p');
+    var aButton = document.getElementById('a');
+    var divButton = document.getElementById('div');
+    //селектор параграфов
+    p.onclick = function toggle() {
+        for (var i = 0; i <= paragraphs.length; i++) {
+        if (paragraphs[i].style.backgroundColor == "white") {
+            paragraphs[i].style.backgroundColor = "red";
+        }
+        else {
+            paragraphs[i].style.backgroundColor = "white";
+        }
+    }
+    }
+     //селектор ссылок
+     a.onclick = function toggle() {
+        for (var i = 0; i <= anchors.length; i++) {
+        if (anchors[i].style.backgroundColor == "white") {
+            anchors[i].style.backgroundColor = "red";
+        }
+        else {
+            anchors[i].style.backgroundColor = "white";
+        }
+    }
+    }
+      //селектор div
+      divButton.onclick = function toggle() {
+        if (div.style.backgroundColor == "white") {
+            div.style.backgroundColor = "red";
+        }
+        else {
+            div.style.backgroundColor = "white";
+        }
+      }
+</script>
+</body>
+</html>

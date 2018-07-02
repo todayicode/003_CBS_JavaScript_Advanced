@@ -7,7 +7,7 @@
     <title>001_Конструкторы и прототипы</title>
 </head>
 <body>
-    <h1>Конструкторы и прототипыи</h1>
+    <h1>Конструкторы и прототипы</h1>
     <h2>Дополнительное задание</h2>
     <p>Создайте функцию-конструктор коробка для создания объекта со свойствами высота, ширина, глубина и материал. Также, в объекте должны быть методы для получения объема и для сравнения объектов, объекты должны считаться равными, если содержат одинаковые значения в свойстве материал.</p>
     <a href="html/000_task.html">Перейти</a>
@@ -21,11 +21,99 @@
     <p>Разработайте функцию-конструктор, которая будет создавать объект Human, добавьте на свое усмотрение свойства и методы в этот объект. Подумайте, какие методы и свойства следует сделать уровня экземпляра, а какие уровня функции-конструктора. </p>
     <a href="html/003_task.html">Перейти</a>
     <h3>Задание 4</h3>
-    <p>Создайте пример, демоснстрирующий назначение метода toString(). </p>
+    <p>Создайте пример, демонстрирующий назначение метода toString(). </p>
     <a href="html/004_task.html">Перейти</a>
-
-
     
+    Задание 1.
+    function Table() {
+        this.form = form; // свойство экземпляра
+        height = 90; // свойство функции-конструктора
+        this.description = function() {
+            return "The table is " + this.form;// метод экземлпяра
+        strong = function() {
+            return "The table is the strongest"; // метод функции-конструктора
+        }
+
+    Задание 2
+
+function Human(name, age, sex) {
+    this.name = name;
+    this.age = age;
+    this.sex = sex;
+    this.speak = function() {
+        return "My name is " + this.name + ". I'm " + this.age + " year old, and I can speak";
+    }
+
+}
+//создание 4 экземпляров Human
+var john = new Human('John', 22, 'male');
+var tom = new Human('Tom', 25, 'male');
+var alice = new Human('Alice', 21, 'female');
+var betty = new Human('Betty', 23, 'female');
+//объевление массива и добавление в массив четырех объектов
+var arr = [john, tom, alice, betty];
+//объявление функции сравнения по возрасту
+function compareAge(a,b) {
+    if (a.age > b.age) {
+        return 1;
+    }
+    if (a.age < b.age) {
+        return -1;
+    }
+}
+//сортировка элементов массива arr по свойству age
+arr.sort(compareAge);
+//вывод в консоль отсортированного массива
+console.log(arr);
+
+Задание 3
+//создание функции-конструктора Human со свойствами и методами
+function Human(name, age, sex) {
+    this.name = name;
+    this.age = age;
+    this.sex = sex;
+    this.speak = function() {
+        return "My name is " + this.name + ". I'm " + this.age + " years old, and I can speak";
+    }
+    this.walk = function() {
+        return "This.name " + "can walk";
+    }
+}
+//создание 4х экземляров Human
+var john = new Human('John', 22, 'male');
+var tom = new Human('Tom', 25, 'male');
+var alice = new Human('Alice', 21, 'female');
+var betty = new Human('Betty', 23, 'female');
+//добавление свойств и методов на уровне экземпляра
+john.height = 174;
+john.dance = function() {
+    return "John can dance";
+}
+tom.drive = function() {
+    return "Tom can drive";
+}
+tom.height = 190;
+alice.cliffDive = function() {
+    return "Alice can cliffdive";
+}
+alice.height = 180;
+betty.cook = function() {
+    return "Betty can coook";
+}
+betty.height = 165;
+
+Задание 4.
+//вызов метода toString на объекте tom
+tom.toString() // "[object Object]"
+//переопределие метода toString на Human
+Human.prototype.toString = function(){
+    return this.name + " is " + this.age + " years old."
+}
+tom.toString() // "Tom is 25 years old.
+//
+//
+//
+//
 </body>
 </html>
 
