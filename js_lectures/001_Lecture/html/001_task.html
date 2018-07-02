@@ -6,114 +6,40 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>JavaScript Essentials</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-    <style>
-        body {
-            margin: 50px;
-        }
-    </style>
+    <link rel="stylesheet" href="css/main.css" >
 </head>
 <body>
-    <script type="text/javascript">
-    // сумма чисел между a и b включая a и b. a = 2. b = 100. Вариант с while
-    document.write("<br>" + "Сумма чисел между a и b включая a и b. a = 2. b = 100. Вариант с while " + "<br>");
-       var a = 2;
-       var b = 100;
-       var sum = 0;
-       while (a <= b) {
-           sum += a++;
-       }
-       document.write(sum + " <br>");
-       document.write("<hr>");
-   // сумма чисел между a и b включая a и b. Вариант с for 
-   document.write("<br>" + "Сумма чисел между a и b включая a и b. a = 2. b = 100. Вариант с for " + "<br>");
-       a = 2;
-       b = 100;
-       sum = 0;
-       for (a=2; a <= b; a++) {
-           sum += a
-       }
-       document.write(sum + " <br>");
-       document.write("<hr>");
-    // выводит на экран все нечетные значения, расположенные в числовом промежутке от a и b.
-       a = 2;
-       b = 100;
-       document.write("<br>" + "Нечетные значения, расположенные в числовом промежутке от a и b. a = 2. b = 100." + "<br>");
-       for (a=2; a <= b; a++) {
-           if (a%2==0) {
-               continue;
-           }
-           else {
-               document.write (a + ";&nbsp;")
-               
-           }
-       }
-       document.write("<hr>");
-
-       //   факториал N!, рассчитываемый с помощью do-while
-       document.write("<br>" + "<br>" + "факториал N!, рассчитываемый с помощью do-while ( в данном примере 5!)" + "<br>");
-       var p = 5;
-       var n = 1;
-       do { 
-           n = p * n;
-           p = p - 1;
-           
-           }
-        while (p > 0);
-        document.write(n + " <br>");
-        document.write("<hr>");
-        
-        // прямоугольник  c помощью * и &nbsp;
-        document.write("<br>" + "<br>" + "прямоугольник  c помощью * и пробела" + "<br>" + "<br>");
-
-        for (var i = 0; i <= 6; i++) {
-                for (var j = 0; j < 20; j++) {
-                    if (i == 0 || i == 6) {
-                    document.write("*" + "&nbsp;");
-                    
-                }
-                    else {
-                        if (j == 0 || j == 18) {
-                            document.write("*");
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h3>Задание 1</h3>
+                <code><pre>
+                    function Box(a, material) { 
+                        this.height = a;
+                        this.width = a;
+                        this.depth = a;
+                        this.material = material;
+                        this.volume = function() {
+                            return "Объем куба = " + a*a*a;
                         }
-                        else {
-                            document.write("&nbsp;" + "&nbsp;" + "&nbsp;");
+                        this.equals = function(obj1, obj2) {
+                            if (obj1.material === obj2.material) {
+                                return alert("Объекты равные");
+                            }
+                            else {
+                                return alert("Объекты не равны")
+                            }
                         }
-                    }       
-            }
-            document.write("<br/>");
-        }
-        document.write("<hr>");
-            // прямоугольный треугольник  c помощью * и &nbsp;
-        document.write("<br>" + "<br>" + "прямоугольный треугольник  c помощью * и пробела" + "<br>" + "<br>");
-        for (var i = 0; i < 20; i++) {
-            for (var j = 0; j < i; j++) {
-                document.write("*");
-            }
-            document.write("<br/>");
-        }
-        document.write("<hr>");
-        // равносторонний треугольник  c помощью * и &nbsp;
-        document.write("<br>" + "<br>" + "равносторонний треугольник  c помощью * и пробела. Треугольник получился немного вытянутый" + "<br>" + "<br>");
-        var star = "*";
-        var space = "&nbsp;";
-        var spaces = 6;
-        var j = 6;
-
-        for (var i = 6; i > 0; i--) {
-                for (j; j > 0; j--) {
-                document.write(space);
-                } 
-            document.write(star);
-            document.write("<br>");
-            star += space + "*";
-            j = spaces - 1;
-            spaces -= 1;
-        }
-        document.write("<hr>");
-
-         document.write("<br>" + "<br>" + "ромб   c помощью * и пробела. Не получился." + "<br>" + "<br>");
-        
-      </script>
-      <a href="../js_002_lecture.html">Назад</a>
+                    }
+                    var box1 = new Box(100, "steel");
+                    var box2 = new Box(200, "steel");
+                    console.log(box1.volume());
+                    box1.equals(box1, box2); 
+                </pre></code>
+            </div>
+        </div>
+    </div>
+    <scrip></scrip>
+    <a href="../js_001_lecture.html">Назад</a>
 </body>
 </html>
