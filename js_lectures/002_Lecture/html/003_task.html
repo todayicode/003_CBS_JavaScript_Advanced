@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Задание 3</title>
+    <style> body {
+        background-color: rgb(212, 245, 219);
+    }
+    a {
+       
+        text-decoration: none;
+    }
+    p, a, div {
+        width: 100px;
+        height: 100px;
+        background-color: white;
+        border-radius: 5px 5px;
+        border: 3px solid grey;
+        margin: 20px;
+        padding: 20px 15px ;
+        font-size: 30pt;
+        box-sizing: border-box;
+        color: black;
+        display: inline-block;
+    }
+
+    div {
+        padding: 20px 0 ;
+    }
+    </style>
+</head>
+<body>
+        Разработайте модуль, который будет содержать функцию для получения элементов на странице с определенным значением в атрибуте с именем class. Пример использование модуля. var arr = MyQyery.FindClass("redButton"); = возвращает массив элементов с атрибутом class = "redButton".
+        <p class="paragraph">&lt;p&gt;</p>
+        <a class="anchor"href="#">&lt;a&gt;</a>
+        <p class="">&lt;p&gt;</p>
+        <div class="test_div">&lt;div&gt;</div>
+        <p class="paragraph">&lt;p&gt;</p>
+        <a class="anchor" href="#">&lt;a&gt;</a>
+        <a class="anchor" href="#">&lt;a&gt;</a>
+        <p class="paragraph">&lt;p&gt;</p>
+        <a class="anchor" href="#">&lt;a&gt;</a>
+        <a class="anchor" href="#">&lt;a&gt;</a>
+        <p class="paragraph">&lt;p&gt;</p>
+        <button class = "p">выбрать все параграфы</button>
+        <button class = "a">выбрать все ссылки</button>
+        <button class = "div">выбрать DIV</button>
+         
+<script>
+     var myQyery = {
+         findClass: function(className) {
+             return document.getElementsByClassName(className);
+         }
+     }
+    myQyery.findClass("paragraph");
+</script>
+</body>
+</html>

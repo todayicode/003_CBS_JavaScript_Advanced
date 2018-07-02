@@ -7,6 +7,9 @@
     <title>Дополнительное задание</title>
 </head>
 <style>
+    body {
+        background-color: rgb(212, 245, 219);
+    }
     a {
        
         text-decoration: none;
@@ -55,36 +58,46 @@
     var aButton = document.getElementById('a');
     var divButton = document.getElementById('div');
     //селектор параграфов
-    p.onclick = function toggle() {
+    p.onclick = function() {
         for (var i = 0; i <= paragraphs.length; i++) {
-        if (paragraphs[i].style.backgroundColor == "white") {
-            paragraphs[i].style.backgroundColor = "red";
-        }
-        else {
+        if (paragraphs[i].style.backgroundColor == "red") {
             paragraphs[i].style.backgroundColor = "white";
-        }
-    }
-    }
-     //селектор ссылок
-     a.onclick = function toggle() {
-        for (var i = 0; i <= anchors.length; i++) {
-        if (anchors[i].style.backgroundColor == "white") {
-            anchors[i].style.backgroundColor = "red";
+            paragraphs[i].style.color = "black";
+            paragraphs[i].style.boxShadow = "none";
         }
         else {
+            paragraphs[i].style.backgroundColor = "red";
+            paragraphs[i].style.color = "white";
+        }
+        }
+    }
+
+     //селектор ссылок
+     a.onclick = function() {
+        for (var i = 0; i <= anchors.length; i++) {
+        if (anchors[i].style.backgroundColor == "red") {
             anchors[i].style.backgroundColor = "white";
+            anchors[i].style.color = "black";
+
+        }
+        else {
+            anchors[i].style.backgroundColor = "red";
+            anchors[i].style.color = "white";
         }
     }
     }
       //селектор div
-      divButton.onclick = function toggle() {
-        if (div.style.backgroundColor == "white") {
-            div.style.backgroundColor = "red";
-        }
-        else {
+      divButton.onclick = function() {
+        if (div.style.backgroundColor == "red") {
             div.style.backgroundColor = "white";
-        }
+            div.style.color = "black";
+        } 
+        else {
+        div.style.backgroundColor = "red";
+        div.style.color = "white";
+        
       }
+    }
 </script>
 </body>
 </html>
