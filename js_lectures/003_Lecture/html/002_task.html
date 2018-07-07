@@ -10,13 +10,23 @@
 <body>
     <div class="container">
         <div class="row">
-            <div class="col">
-                <div id = "result"></div>
-            </div>
+     
         </div>
         <div class="row">
             <div class="col">
-                <button class = "btn btn-primary" id="execute">Вывести сумму двух GET параметров</button>
+                <form class="text-center mt-5">
+                    <label for="a" > Введите число для a<input type="number" name="a" id="a" class="ml-4"></label> <br>
+                    <label for="b"> Введите число для b<input type="number" name="b" id="b" class="ml-4"></label> <br>
+                    <div class="text-center mt-4">
+                        <input type="submit" class="btn btn-success" value="отправить">
+                    </div>
+                </form>
+                <div class="col text-center mt-5">
+                        <div id = "result"></div>
+                    </div>
+                <div class="text-center mt-4">
+                    <button class = "btn btn-primary" id="execute">Вывести сумму двух GET параметров</button>
+                </div>
             </div>
         </div>
     </div>

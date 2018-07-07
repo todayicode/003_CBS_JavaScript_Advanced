@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Задание 5</title>
+    <style>
+    </style>
+</head>
+<body>
+    <form>
+    <input type="text" id="text" value="Текст бегущей строки"> <br>
+    <input type="button" id="button" value="start">
+    </form>
+    <script>
+    var button = document.getElementsByTagName('button');
+    var el = document.getElementById("text");
+    var text = el.value;
+    var paragraph = document.getElementById("paragraph");
+    function runString() {
+    text = text.substring(1,) + text[0];
+    el.value = text;
+}
+
+
+
+
+
+ </script>
+</body>
+</html>

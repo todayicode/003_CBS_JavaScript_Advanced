@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/000_task.css">
+    <title>Document</title>
+</head>
+<body>
+    <div>0</div>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <input type="button" id="color" value="Change Color">
+    <script>
+    var button = document.getElementById("color");
+    var arr = document.getElementsByTagName("div");
+    var i = 0;  
+    button.onclick = function() {
+        arr[i].style.backgroundColor = "red";
+        if (i > 0)  {
+        arr[i-1].style.backgroundColor = "green";
+        }
+        if (i < 5) {
+        i++
+        }
+        else {
+            i = 0 
+        }
+    
+    }
+    </script>
+</body>
+</html>

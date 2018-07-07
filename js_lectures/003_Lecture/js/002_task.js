@@ -1,5 +1,3 @@
-
-
 document.getElementById("execute").onclick = function() {
     var str = location.search.substring(1); 
 var arr = str.split("&");
