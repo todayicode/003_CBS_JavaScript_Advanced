@@ -1,3 +1,4 @@
+window.onload = function() {
 var button = document.getElementById("button");
 var expression = document.getElementById("expression");
 var result = document.getElementById("result");
@@ -5,21 +6,26 @@ var str;
 var pattern1 = /\d{1,}\s\+\s\d{1,}/;
 var pattern2 = /\d{1,}\s\-\s\d{1,}/;
 var arr = [];
-button.onclick = function() {
+function compute() {
     str = expression.value;
     if (pattern1.test(str)) {
-        result.innerHTML = "pattern1";
         arr = str.split("+");
         var a = +arr[0];
         var b = +arr[1];
-        return console.log(a + b);
+        // result.innerHTML = a + b;
+        console.log(a + b);
     }
-    else if (pattern2.test(str)) {
-        result.innerHTML = "pattern2";
+    if (pattern2.test(str)) {
         arr = str.split("-");
+        var a = +arr[0];
+        var b = +arr[1];
+        // result.innerHTML = a - b;
+        console.log(a - b);
     }
     else {
-        result.innerHTML = "неверный ввод данных";
-       
+        console.log("неверный ввод данных");  
     }
 }
+button.onclick = compute;
+}
+
