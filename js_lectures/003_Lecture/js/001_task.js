@@ -10,6 +10,7 @@ var sec = 0;
 var min = 0;
 start.onclick = function() {
     begin = setInterval(function() {
+        milisec +=1;
         if (sec < 10) {
             seconds.innerHTML = "0" + sec + ":";
         }
@@ -22,20 +23,25 @@ start.onclick = function() {
         else {
             minutes.innerHTML = min + ":";
         }
-        miliSeconds.innerHTML = milisec;
-        if (milisec == 1000) {
+        if (milisec < 10) {
+            miliSeconds.innerHTML = "0" + milisec;
+        }
+        else {
+            miliSeconds.innerHTML = milisec;
+        }
+        if (milisec > 99) {
             sec +=1;
             milisec = 0;
         }
-        if (sec == 60) {
+        if (sec > 59) {
             min +=1;
             sec = 0;
         }
-        if (min == 60) {
+        if (min > 59) {
             min = 0;
         }
-        milisec +=10;
-    },10)
+        milisec +=1;
+    }, 0)
 }
 stop.onclick = function() {
     clearInterval(begin);
