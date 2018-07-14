@@ -10,23 +10,38 @@ var sec = 0;
 var min = 0;
 start.onclick = function() {
     begin = setInterval(function() {
-        miliSeconds.innerHTML = milisec;
-        seconds.innerHTML = sec + ":";
-        minutes.innerHTML = min + ":";
-        if (milisec == 100) {
+        milisec +=1;
+        if (sec < 10) {
+            seconds.innerHTML = "0" + sec + ":";
+        }
+        else {
+            seconds.innerHTML = sec + ":";
+        }
+        if (min < 10) {
+            minutes.innerHTML = "0" + min + ":";
+        }
+        else {
+            minutes.innerHTML = min + ":";
+        }
+        if (milisec < 10) {
+            miliSeconds.innerHTML = "0" + milisec;
+        }
+        else {
+            miliSeconds.innerHTML = milisec;
+        }
+        if (milisec > 99) {
             sec +=1;
             milisec = 0;
         }
-        if (sec == 59) {
+        if (sec > 59) {
             min +=1;
             sec = 0;
         }
-        if (min == 60) {
-            hour += 1;
+        if (min > 59) {
             min = 0;
         }
         milisec +=1;
-    },1)
+    }, 0)
 }
 stop.onclick = function() {
     clearInterval(begin);
@@ -35,8 +50,9 @@ reset.onclick = function() {
     clearInterval(begin);
     sec = 0;
     min = 0;
-    hour = 0;
-    seconds.innerHTML = sec;
-    minutes.innerHTML = min + ":";
-    hours.innerHTML = hour + ":";
+    milisec = 0;
+    miliSeconds.innerHTML = "0" + milisec;
+    seconds.innerHTML = "0" + sec + ":";
+    minutes.innerHTML = "0" + min + ":";
+    
 }

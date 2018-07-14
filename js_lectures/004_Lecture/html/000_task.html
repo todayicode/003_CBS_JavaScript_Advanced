@@ -13,23 +13,44 @@
     <div>2</div>
     <div>3</div>
     <div>4</div>
-    <input type="button" id="color" value="Change Color">
+    <input type="button" id="bottonRight" value="Right ---&gt;"> <br>
+    <input type="button" id="bottonLeft" value="Left &lt;---"> <br>
+    <input type="button" id="auto" value="buttonAuto">
     <script>
-    var button = document.getElementById("color");
+    var buttonRight = document.getElementById("bottonRight");
+    var buttonLeft = document.getElementById("bottonLeft");
+    var buttonAuto = document.getElementById("buttonAuto");
     var arr = document.getElementsByTagName("div");
     var i = 0;  
-    button.onclick = function() {
+    var j = 0;
+    function rightToLeft() {
+        if (i>4) {
+            arr[i-1].style.backgroundColor = "green";
+            i = 0;
+        }
         arr[i].style.backgroundColor = "red";
         if (i > 0)  {
         arr[i-1].style.backgroundColor = "green";
         }
-        if (i < 5) {
-        i++
+        i++;
+    }
+    var leftToRight = function() {
+        if (i<0) {
+        arr[i+1].style.backgroundColor = "green";
+        i = 4;
         }
-        else {
-            i = 0 
+        arr[i].style.backgroundColor = "red";
+        if (i < 4)  {
+        arr[i+1].style.backgroundColor = "green";
         }
+        i--;
+    }
     
+    buttonRight.onclick = rightToLeft;
+    buttonLeft.onclick = leftToRight;
+    // buttonAuto.onclick = template(leftToRight, 1000)
+    function template(func, int) {
+        return setInterval(func, int);
     }
     </script>
 </body>
