@@ -1,11 +1,15 @@
-var button = document.getElementsByTagName('button');
+var button = document.getElementById('button');
 var el = document.getElementById("text");
 var text = el.value;
-var paragraph = document.getElementById("paragraph");
+var speed = 100;
+function start() {
+    timer = setInterval(runString, speed)
+}
 function runString() {
     text = text.substring(1,) + text[0];
     el.value = text;
 }
+button.addEventListener("click", start);
 
-button.onclick = setInterval(runString, 100);
+
 
